@@ -170,9 +170,12 @@ public class LibraryLoader {
 
     logger.debug("Attempting to load \"" + loadLibname + "\".");
 
-    String[] paths = {
-        fatJarLibraryPath("static", flavor),
+    /*
+     * Changed from baseline, want dynamic lib (if available) to have priority over static (bundled with jar)
+     */
+    String[] paths = {        
         fatJarLibraryPath("dynamic", flavor),
+	fatJarLibraryPath("static", flavor),
     };
 
     InputStream is = findLibrary(paths, loadLibname);
