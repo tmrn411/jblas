@@ -152,23 +152,30 @@ generated-sources: \
 	ant javah
 	touch $@
 
+# dirx provides a space-character safer version of dir
+# not sure how original mkdir lines ever worked for 'MAC OS X'
+# got this fix from: http://stackoverflow.com/questions/1189781/using-make-dir-or-notdir-on-a-path-with-spaces
+s? = $(subst $(empty) ,?,$1)
+?s = $(subst ?, ,$1)
+dirx = $(call ?s,$(dir $(call s?,$1)))
+
 $(SRC_C)/NativeBlas.c: generated-sources
 
 $(TARGET_C)/NativeBlas.o: $(SRC_C)/NativeBlas.c
-	@mkdir -p "$(dir $@)"
+	@mkdir -p "$(call dirx,$@)"
 	$(CC) $(CFLAGS) $(INCDIRS) -c $(SRC_C)/NativeBlas.c -o $@
 
 $(TARGET_C)/jblas_arch_flavor.o: generated-sources
-	@mkdir -p "$(dir $@)"
+	@mkdir -p "$(call dirx,$@)"
 	$(CC) $(CFLAGS) $(INCDIRS) -c $(SRC_C)/jblas_arch_flavor.c -o $@
 
 # Move the compile library to the machine specific directory.
 $(FULL_LIB_PATH)/$(LIB)jblas.$(SO) : $(TARGET_C)/NativeBlas.$(SO)
-	@mkdir -p "$(dir $@)"
+	@mkdir -p "$(call dirx,$@)"
 	mv "$<" "$@"
 
 $(LIB_PATH)/$(LIB)jblas_arch_flavor.$(SO): $(SRC_C)/jblas_arch_flavor.$(SO)
-	@mkdir -p "$(dir $@)"
+	@mkdir -p "$(call dirx,$@)"
 	mv "$<" "$@"
 
 ######################################################################
