@@ -140,7 +140,8 @@ generated-sources: \
 	$(LAPACK)/[sd]syev[rdx].f \
 	$(LAPACK)/[sd]posv.f \
 	$(LAPACK)/[sdcz]geev.f \
-	$(LAPACK)/[sd]getrf.f \
+	$(LAPACK)/[sdz]getrf.f \
+	$(LAPACK)/[dz]getri.f \
 	$(LAPACK)/[sd]potrf.f \
 	$(LAPACK)/[sdcz]gesvd.f \
 	$(LAPACK)/[sd]sygvd.f \
