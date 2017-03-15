@@ -67,6 +67,7 @@ public class LibraryLoader {
        * Windows this won't work because 
        */
       if (getUnifiedOSName() != "Windows") {
+	if (0==1) {
         Runtime.getRuntime().addShutdownHook(new Thread() {
           @Override
           public void run() {
@@ -82,6 +83,7 @@ public class LibraryLoader {
             }
           }
         });
+	}
       } else {
         new Thread() {
           @Override

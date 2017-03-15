@@ -331,6 +331,33 @@ public class NativeBlas {
 
   public static native int dgetrf(int m, int n, double[] a, int aIdx, int lda, int[] ipiv, int ipivIdx);
   public static native int sgetrf(int m, int n, float[] a, int aIdx, int lda, int[] ipiv, int ipivIdx);
+  public static native int zgetrf(int m, int n, double[] a, int aIdx, int lda, int[] ipiv, int ipivIdx);
+  public static native int dgetri(int n, double[] a, int aIdx, int lda, int[] ipiv, int ipivIdx, double[] work, int workIdx, int lwork);
+  public static int dgetri(int n, double[] a, int aIdx, int lda, int[] ipiv, int ipivIdx) {
+    int info;
+    double[] work = new double[1];
+    int lwork;
+    info = dgetri(n, doubleDummy, 0, lda, intDummy, 0, work, 0, -1);
+    if (info != 0)
+      return info;
+    lwork = (int) work[0]; work = new double[lwork];
+    info = dgetri(n, a, aIdx, lda, ipiv, ipivIdx, work, 0, lwork);
+    return info;
+  }
+
+  public static native int zgetri(int n, double[] a, int aIdx, int lda, int[] ipiv, int ipivIdx, double[] work, int workIdx, int lwork);
+  public static int zgetri(int n, double[] a, int aIdx, int lda, int[] ipiv, int ipivIdx) {
+    int info;
+    double[] work = new double[1*2];
+    int lwork;
+    info = zgetri(n, doubleDummy, 0, lda, intDummy, 0, work, 0, -1);
+    if (info != 0)
+      return info;
+    lwork = (int) work[0]; work = new double[lwork*2];
+    info = zgetri(n, a, aIdx, lda, ipiv, ipivIdx, work, 0, lwork);
+    return info;
+  }
+
   public static native int dpotrf(char uplo, int n, double[] a, int aIdx, int lda);
   public static native int spotrf(char uplo, int n, float[] a, int aIdx, int lda);
   public static native int cgesvd(char jobu, char jobvt, int m, int n, float[] a, int aIdx, int lda, float[] s, int sIdx, float[] u, int uIdx, int ldu, float[] vt, int vtIdx, int ldvt, float[] work, int workIdx, int lwork, float[] rwork, int rworkIdx);

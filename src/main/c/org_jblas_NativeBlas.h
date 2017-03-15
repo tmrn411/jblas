@@ -569,6 +569,30 @@ JNIEXPORT jint JNICALL Java_org_jblas_NativeBlas_sgetrf
 
 /*
  * Class:     org_jblas_NativeBlas
+ * Method:    zgetrf
+ * Signature: (II[DII[II)I
+ */
+JNIEXPORT jint JNICALL Java_org_jblas_NativeBlas_zgetrf
+  (JNIEnv *, jclass, jint, jint, jdoubleArray, jint, jint, jintArray, jint);
+
+/*
+ * Class:     org_jblas_NativeBlas
+ * Method:    dgetri
+ * Signature: (I[DII[II[DII)I
+ */
+JNIEXPORT jint JNICALL Java_org_jblas_NativeBlas_dgetri
+  (JNIEnv *, jclass, jint, jdoubleArray, jint, jint, jintArray, jint, jdoubleArray, jint, jint);
+
+/*
+ * Class:     org_jblas_NativeBlas
+ * Method:    zgetri
+ * Signature: (I[DII[II[DII)I
+ */
+JNIEXPORT jint JNICALL Java_org_jblas_NativeBlas_zgetri
+  (JNIEnv *, jclass, jint, jdoubleArray, jint, jint, jintArray, jint, jdoubleArray, jint, jint);
+
+/*
+ * Class:     org_jblas_NativeBlas
  * Method:    dpotrf
  * Signature: (CI[DII)I
  */
