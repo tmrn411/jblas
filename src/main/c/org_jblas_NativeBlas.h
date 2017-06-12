@@ -377,6 +377,70 @@ JNIEXPORT void JNICALL Java_org_jblas_NativeBlas_zgeru
 
 /*
  * Class:     org_jblas_NativeBlas
+ * Method:    cher
+ * Signature: (CIF[FII[FII)V
+ */
+JNIEXPORT void JNICALL Java_org_jblas_NativeBlas_cher
+  (JNIEnv *, jclass, jchar, jint, jfloat, jfloatArray, jint, jint, jfloatArray, jint, jint);
+
+/*
+ * Class:     org_jblas_NativeBlas
+ * Method:    zher
+ * Signature: (CID[DII[DII)V
+ */
+JNIEXPORT void JNICALL Java_org_jblas_NativeBlas_zher
+  (JNIEnv *, jclass, jchar, jint, jdouble, jdoubleArray, jint, jint, jdoubleArray, jint, jint);
+
+/*
+ * Class:     org_jblas_NativeBlas
+ * Method:    chpr
+ * Signature: (CIF[FII[FI)V
+ */
+JNIEXPORT void JNICALL Java_org_jblas_NativeBlas_chpr
+  (JNIEnv *, jclass, jchar, jint, jfloat, jfloatArray, jint, jint, jfloatArray, jint);
+
+/*
+ * Class:     org_jblas_NativeBlas
+ * Method:    zhpr
+ * Signature: (CID[DII[DI)V
+ */
+JNIEXPORT void JNICALL Java_org_jblas_NativeBlas_zhpr
+  (JNIEnv *, jclass, jchar, jint, jdouble, jdoubleArray, jint, jint, jdoubleArray, jint);
+
+/*
+ * Class:     org_jblas_NativeBlas
+ * Method:    cher2
+ * Signature: (CILorg/jblas/ComplexFloat;[FII[FII[FII)V
+ */
+JNIEXPORT void JNICALL Java_org_jblas_NativeBlas_cher2
+  (JNIEnv *, jclass, jchar, jint, jobject, jfloatArray, jint, jint, jfloatArray, jint, jint, jfloatArray, jint, jint);
+
+/*
+ * Class:     org_jblas_NativeBlas
+ * Method:    zher2
+ * Signature: (CILorg/jblas/ComplexDouble;[DII[DII[DII)V
+ */
+JNIEXPORT void JNICALL Java_org_jblas_NativeBlas_zher2
+  (JNIEnv *, jclass, jchar, jint, jobject, jdoubleArray, jint, jint, jdoubleArray, jint, jint, jdoubleArray, jint, jint);
+
+/*
+ * Class:     org_jblas_NativeBlas
+ * Method:    chpr2
+ * Signature: (CILorg/jblas/ComplexFloat;[FII[FII[FI)V
+ */
+JNIEXPORT void JNICALL Java_org_jblas_NativeBlas_chpr2
+  (JNIEnv *, jclass, jchar, jint, jobject, jfloatArray, jint, jint, jfloatArray, jint, jint, jfloatArray, jint);
+
+/*
+ * Class:     org_jblas_NativeBlas
+ * Method:    zhpr2
+ * Signature: (CILorg/jblas/ComplexDouble;[DII[DII[DI)V
+ */
+JNIEXPORT void JNICALL Java_org_jblas_NativeBlas_zhpr2
+  (JNIEnv *, jclass, jchar, jint, jobject, jdoubleArray, jint, jint, jdoubleArray, jint, jint, jdoubleArray, jint);
+
+/*
+ * Class:     org_jblas_NativeBlas
  * Method:    cgemm
  * Signature: (CCIIILorg/jblas/ComplexFloat;[FII[FIILorg/jblas/ComplexFloat;[FII)V
  */

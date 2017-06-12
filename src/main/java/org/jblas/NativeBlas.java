@@ -127,6 +127,14 @@ public class NativeBlas {
   public static native void sger(int m, int n, float alpha, float[] x, int xIdx, int incx, float[] y, int yIdx, int incy, float[] a, int aIdx, int lda);
   public static native void zgerc(int m, int n, ComplexDouble alpha, double[] x, int xIdx, int incx, double[] y, int yIdx, int incy, double[] a, int aIdx, int lda);
   public static native void zgeru(int m, int n, ComplexDouble alpha, double[] x, int xIdx, int incx, double[] y, int yIdx, int incy, double[] a, int aIdx, int lda);
+  public static native void cher(char uplo, int n, float alpha, float[] x, int xIdx, int incx, float[] a, int aIdx, int lda);
+  public static native void zher(char uplo, int n, double alpha, double[] x, int xIdx, int incx, double[] a, int aIdx, int lda);
+  public static native void chpr(char uplo, int n, float alpha, float[] x, int xIdx, int incx, float[] ap, int apIdx);
+  public static native void zhpr(char uplo, int n, double alpha, double[] x, int xIdx, int incx, double[] ap, int apIdx);
+  public static native void cher2(char uplo, int n, ComplexFloat alpha, float[] x, int xIdx, int incx, float[] y, int yIdx, int incy, float[] a, int aIdx, int lda);
+  public static native void zher2(char uplo, int n, ComplexDouble alpha, double[] x, int xIdx, int incx, double[] y, int yIdx, int incy, double[] a, int aIdx, int lda);
+  public static native void chpr2(char uplo, int n, ComplexFloat alpha, float[] x, int xIdx, int incx, float[] y, int yIdx, int incy, float[] ap, int apIdx);
+  public static native void zhpr2(char uplo, int n, ComplexDouble alpha, double[] x, int xIdx, int incx, double[] y, int yIdx, int incy, double[] ap, int apIdx);
   public static native void cgemm(char transa, char transb, int m, int n, int k, ComplexFloat alpha, float[] a, int aIdx, int lda, float[] b, int bIdx, int ldb, ComplexFloat beta, float[] c, int cIdx, int ldc);
   public static native void dgemm(char transa, char transb, int m, int n, int k, double alpha, double[] a, int aIdx, int lda, double[] b, int bIdx, int ldb, double beta, double[] c, int cIdx, int ldc);
   public static native void sgemm(char transa, char transb, int m, int n, int k, float alpha, float[] a, int aIdx, int lda, float[] b, int bIdx, int ldb, float beta, float[] c, int cIdx, int ldc);

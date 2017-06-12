@@ -133,6 +133,10 @@ generated-sources: \
 	$(BLAS)/i[sdcz]amax.f \
 	$(BLAS)/[sdcz]gemv.f \
 	$(BLAS)/[sdcz]ger*.f \
+	$(BLAS)/[sdcz]her.f \
+	$(BLAS)/[sdcz]hpr.f \
+	$(BLAS)/[sdcz]her2.f \
+	$(BLAS)/[sdcz]hpr2.f \
 	$(BLAS)/[sdcz]gemm.f \
 	$(LAPACK)/[sd]gesv.f \
 	$(LAPACK)/[sd]sysv.f \
