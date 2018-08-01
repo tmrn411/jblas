@@ -148,6 +148,7 @@ generated-sources: \
 	$(LAPACK)/[dz]getri.f \
 	$(LAPACK)/[sd]potrf.f \
 	$(LAPACK)/[sdcz]gesvd.f \
+	$(LAPACK)/[sdcz]gesdd.f \
 	$(LAPACK)/[sd]sygvd.f \
 	$(LAPACK)/[sd]gelsd.f \
 	$(LAPACK)/ilaenv.f \
