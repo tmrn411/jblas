@@ -705,6 +705,38 @@ JNIEXPORT jint JNICALL Java_org_jblas_NativeBlas_zgesvd
 
 /*
  * Class:     org_jblas_NativeBlas
+ * Method:    cgesdd
+ * Signature: (CII[FII[FI[FII[FII[FII[FI[II)I
+ */
+JNIEXPORT jint JNICALL Java_org_jblas_NativeBlas_cgesdd
+  (JNIEnv *, jclass, jchar, jint, jint, jfloatArray, jint, jint, jfloatArray, jint, jfloatArray, jint, jint, jfloatArray, jint, jint, jfloatArray, jint, jint, jfloatArray, jint, jintArray, jint);
+
+/*
+ * Class:     org_jblas_NativeBlas
+ * Method:    dgesdd
+ * Signature: (CII[DII[DI[DII[DII[DII[II)I
+ */
+JNIEXPORT jint JNICALL Java_org_jblas_NativeBlas_dgesdd
+  (JNIEnv *, jclass, jchar, jint, jint, jdoubleArray, jint, jint, jdoubleArray, jint, jdoubleArray, jint, jint, jdoubleArray, jint, jint, jdoubleArray, jint, jint, jintArray, jint);
+
+/*
+ * Class:     org_jblas_NativeBlas
+ * Method:    sgesdd
+ * Signature: (CII[FII[FI[FII[FII[FII[II)I
+ */
+JNIEXPORT jint JNICALL Java_org_jblas_NativeBlas_sgesdd
+  (JNIEnv *, jclass, jchar, jint, jint, jfloatArray, jint, jint, jfloatArray, jint, jfloatArray, jint, jint, jfloatArray, jint, jint, jfloatArray, jint, jint, jintArray, jint);
+
+/*
+ * Class:     org_jblas_NativeBlas
+ * Method:    zgesdd
+ * Signature: (CII[DII[DI[DII[DII[DII[DI[II)I
+ */
+JNIEXPORT jint JNICALL Java_org_jblas_NativeBlas_zgesdd
+  (JNIEnv *, jclass, jchar, jint, jint, jdoubleArray, jint, jint, jdoubleArray, jint, jdoubleArray, jint, jint, jdoubleArray, jint, jint, jdoubleArray, jint, jint, jdoubleArray, jint, jintArray, jint);
+
+/*
+ * Class:     org_jblas_NativeBlas
  * Method:    dsygvd
  * Signature: (ICCI[DII[DII[DI[DII[III)I
  */
